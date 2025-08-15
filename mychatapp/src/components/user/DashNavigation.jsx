@@ -16,8 +16,10 @@ import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
-function DashNav({ onNavigate }) {
+function DashNavigation({ onNavigate }) {
   const [selectedKey, setSelectedKey] = useState("dash");
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const menuItems = [
     { key: "mykids", label: "My Kids" },
@@ -43,8 +45,6 @@ function DashNav({ onNavigate }) {
           [`& .MuiDrawer-paper`]: {
             width: drawerWidth,
             boxSizing: "border-box",
-            backgroundColor: "#e0f7e9",
-            borderRight: "1px solid #cceedd",
             paddingTop: "64px",
           },
         }}
